@@ -25,7 +25,7 @@
       </f:content>
     </f:SimpleForm>
     <beginButton>
-      <Button icon="sap-icon://accept" text="OK" type="Emphasized" press="openAddDialog"/>
+      <Button icon="sap-icon://accept" text="OK" type="Emphasized" press="addBook"/>
     </beginButton>
     <endButton>
       <Button icon="sap-icon://decline" text="Cancel" press="closeAddDialog"/>

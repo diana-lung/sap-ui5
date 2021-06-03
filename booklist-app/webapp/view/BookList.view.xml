@@ -24,7 +24,7 @@
           <SearchField
               id="searchField"
               width="20%"
-              placeholder="{i18n>Search Book...}"
+              placeholder="{i18>searchBook}"
               search="onSearch"/>
           <Button
               id="sortDescendingButton"
@@ -34,7 +34,7 @@
           <Button
               id="sortAscendingButton"
               press="onSortAscending"
-              tooltip="{i18n>sortButtonTextDescending}"
+              tooltip="{i18n>sortButtonTextAscending}"
               icon="sap-icon://arrow-top"/>
         </content>
       </OverflowToolbar>
