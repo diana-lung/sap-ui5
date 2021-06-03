@@ -10,10 +10,10 @@ module.exports = function(grunt) {
 	// load grunt plugins
     require('jit-grunt')(grunt, {
 		openui5_preload: 'grunt-openui5',
-		configureProxies: 'grunt-connect-proxy',		
+		configureProxies: 'grunt-connect-proxy',
         nwabap_ui5uploader: 'grunt-nwabap-ui5uploader'
 	});
-	
+
 
 	grunt.initConfig({
 
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                 port: '8000'
             }
 		},
-		
+
 		connect: {
             options: {
                 hostname: '<%= settings.connect.host %>',
@@ -55,17 +55,17 @@ module.exports = function(grunt) {
                 //     rewrite: {
                 //         '/resources': '/sap/public/bc/ui5_ui5/resources'
                 //     }
-				// }, 
+				// },
 				{
                     context: '/sap/opu/odata',
                     host: '<%= settings.proxy.host %>',
                     port: '<%= settings.proxy.port %>',
                     https: false
 				}
-				
+
             ]
 		},
-		
+
 		watch: {
             options: {
                 livereload: true
@@ -140,9 +140,9 @@ module.exports = function(grunt) {
 					ui5: {
 						language: 'EN',
 						transportno: 'I42K902395',
-						package: 'Z801_DEV_PACK_SJOO',
-						bspcontainer: 'Z801_BOOKS_SJOO',
-						bspcontainer_text: 'Books UI5 app Szila'
+						package: 'Z801_LIBRARY_DILU',
+						bspcontainer: 'Z801BOOKS_DL',
+						bspcontainer_text: 'Books UI5 app Diana'
 					},
 					resources: {
 						cwd: 'dist',
