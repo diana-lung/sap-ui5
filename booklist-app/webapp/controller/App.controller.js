@@ -5,11 +5,6 @@ sap.ui.define([
 ], function (Controller, MessageToast, ResourceModel) {
     "use strict";
     return Controller.extend("org.ubb.books.controller.App", {
-        // onInit: function () {
-        //     this.getView().byId("idBooksTable").getBinding("items").refresh();
-        //     // var oDataModel = new sap.ui.model.odata.ODataModel("proxy/http/services.odata.org/V2/(S(u0fm33whthkboho0u01zhgyh))/OData/OData.svc", true);
-        //     // sap.ui.getCore().setModel(oDataModel,"productsModel");
-        // },
 
         /*open add book dialog window*/
         openAddDialog: function () {

@@ -1,0 +1,87 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    controllerName="org.ubb.books.controller.App"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:vm="sap.ui.comp.variants">
+
+  <Table id="idBooksTable"
+         items="{
+           path: '/Books',
+           sorter: {
+             path: 'Title'
+			     }
+		     }"
+         growing="true"
+         growingThreshold="10">
+    <headerToolbar>
+      <OverflowToolbar height="5em">
+        <content>
+          <Button
+              icon="sap-icon://add"
+              text="See Checked out Books"
+              press="openCheckoutBooks"
+          />
+          <ToolbarSpacer/>
+          <Button
+              id="filter"
+              press="openFilterDialog"
+              text="Filter"
+              icon="sap-icon://add-filter"/>
+        </content>
+      </OverflowToolbar>
+    </headerToolbar>
+    <columns>
+      <Column width="13em" >
+        <Text text="ISBN"/>
+      </Column>
+      <Column width="13em" >
+        <Text text="Title"/>
+      </Column>
+      <Column width="12em">
+        <Text text="Author"/>
+      </Column>
+      <Column>
+        <Text text="Publish Date"/>
+      </Column>
+      <Column hAlign="Center">
+        <Text text="Language"/>
+      </Column>
+      <Column hAlign="Center">
+        <Text text="Available Books"/>
+      </Column>
+      <Column hAlign="Right">
+        <Text text="Action"/>
+      </Column>
+    </columns>
+
+    <items>
+      <ColumnListItem>
+        <cells>
+          <Text text="{Isbn}"/>
+          <ObjectIdentifier
+              title="{Title}"
+          />
+          <Text text="{Author}"/>
+          <Text text="{
+							path: 'PublishDate',
+							type: 'sap.ui.model.type.Date'}"
+          />
+          <Text text="{Language}"/>
+          <Text text="{= parseInt(${AvailableNr}) }"/>
+          <HBox justifyContent="End">
+            <Button
+                icon="sap-icon://learning-assistant"
+                tooltip="Checkout Book"
+                press="checkoutBook"/>
+          </HBox>
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
+
+
+</mvc:View>

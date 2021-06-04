@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+                         xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout"
+                         xmlns:f="sap.ui.layout.form" xmlns:ui="sap.ui"
+                         xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+  <Dialog title="{i18n>filterBook}">
+    <f:SimpleForm id="filterBookForm" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+                  labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1"
+                  class="editableForm sapUiSizeCompact">
+      <f:content>
+        <Label text="ISBN"/>
+        <Input id="isbn" placeholder="Enter ISBN..." maxLength="17"/>
+        <Label text="Book Title"/>
+        <Input id="title" placeholder="Enter Book Title..."/>
+        <Label text="Book Author"/>
+        <Input id="author" placeholder="Enter Book Author..."/>
+        <Label text="Publish Date"/>
+        <DatePicker placeholder="From..." id="pdate1" value="" displayFormat="short" change="handleChange" class="sapUiSmallMarginBottom"/>
+        <Label />
+        <DatePicker placeholder="To..." id="pdate2" value="" displayFormat="short" change="handleChange" class="sapUiSmallMarginBottom"/>
+        <Label text="Language"/>
+        <Input id="language" placeholder="Enter Language..."/>
+      </f:content>
+    </f:SimpleForm>
+    <beginButton>
+      <Button icon="sap-icon://accept" text="OK" type="Emphasized" press="filterBooks"/>
+    </beginButton>
+    <endButton>
+      <Button icon="sap-icon://decline" text="Cancel" press="closeFilterDialog"/>
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>
